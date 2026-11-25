@@ -1,0 +1,6 @@
+.env
+.env.*
+config.local.js
+*.xlsx
+*.xls
+*.csv

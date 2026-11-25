@@ -1,0 +1,27 @@
+/* USFOGA navy, flag red, and white, matched to the supplied logo. */
+:root {
+  --navy:#2d2466;
+  --blue:#b6262b;
+  --line:#e2e0e9;
+  --muted:#605f72;
+  --bg:#f7f7fa;
+  --soft:#faf9fc;
+  --danger:#a32427;
+}
+.top { border-bottom:3px solid #b6262b; }
+.logo { width:144px; max-height:132px; object-fit:contain; }
+.badge { background:#faf0f0; color:#a52328; }
+.heroCard,.summary { background:#2d2466; }
+.heroCard span,.summary small { color:#e1deef; }
+.panelhead { border-top:3px solid #2d2466; }
+input[type=text],input[type=email],input[type=tel],input[type=number],input[type=date],select,textarea,.choice { border-color:#d6d2e1; }
+input::placeholder,textarea::placeholder { color:#808080; }
+input:disabled,select:disabled,textarea:disabled { background:#f4f3f7; color:#666174; }
+.choice:has(input:checked) { background:#fcf1f1; }
+.budget-preview { background:#f1eff7; border-color:#dcd7ec; }
+.deposit-note { border-left-color:#b6262b; }
+.submit { background:#b6262b; color:#fff; }
+.submit:hover:not(:disabled) { background:#972025; }
+.message { border-color:#dcd7ec; background:#f1eff7; }
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,.skip:focus-visible { outline-color:#b6262b; }
+@media(max-width:430px) { .logo { width:118px; max-height:116px; } }

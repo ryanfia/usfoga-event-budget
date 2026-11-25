@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>USFOGA Event Budget Request</title>
+<style>
+:root{--navy:#102b4c;--blue:#1f5fbf;--line:#dbe3ec;--muted:#566b81;--bg:#f4f7fa;--soft:#f8fbfe;--green:#13795b;--danger:#a33223}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);font:15px/1.45 "Segoe UI",Arial,sans-serif;color:var(--navy)}
+button,input,select,textarea{font:inherit}
+.top{background:#fff;border-bottom:1px solid var(--line)}
+.topin{max-width:1050px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{width:190px;max-width:46vw;height:auto;display:block}
+.badge{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:#edf4ff;padding:8px 12px;border-radius:999px;text-align:center}
+.wrap{max-width:1050px;margin:0 auto;padding:0 20px 56px}
+.hero{display:grid;grid-template-columns:1fr 270px;gap:32px;align-items:center;margin:30px 0 24px}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--blue);text-transform:uppercase}
+h1{font-size:42px;letter-spacing:-1.5px;line-height:1.08;margin:10px 0 14px;max-width:560px}
+.lead{font-size:16px;color:var(--muted);max-width:600px;margin:0}
+.heroCard{background:var(--navy);color:#fff;border-radius:18px;padding:23px}
+.heroCard b{font-size:21px;display:block;margin-bottom:8px}
+.heroCard span{color:#cfdfef;font-size:13px;line-height:1.55;display:block}
+.preview-banner{background:#fff9ec;border:1px solid #e6cf99;border-radius:12px;padding:13px 16px;color:#66501e;font-size:13px;margin:0 0 20px}
+.preview-banner strong{margin-right:4px}
+.required-note{margin:16px 3px 0;font-size:12px;color:var(--muted)}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:20px 0}
+.panelhead{padding:20px 22px 18px;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;justify-content:space-between;gap:15px}
+.panelhead h2{margin:3px 0 0;font-size:20px;font-weight:700}
+.kicker{font-size:10px;letter-spacing:.14em;font-weight:800;color:var(--blue)}
+.section-tag{font-size:11px;color:var(--muted);white-space:nowrap;margin-top:18px}
+.section-description{margin:7px 0 0;max-width:720px;color:var(--muted);font-size:13px;line-height:1.5}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:20px 22px;padding:22px}
+.field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.field.full{grid-column:1/-1}
+.category-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 22px}
+.field>label,.field-label{font-size:13px;font-weight:700}
+.required{color:var(--blue)}
+input[type=text],input[type=email],input[type=tel],input[type=number],input[type=date],select,textarea{width:100%;min-width:0;border:1px solid #cbd7e3;border-radius:10px;padding:11px 13px;min-height:46px;background:#fff;color:var(--navy);font-size:15px;line-height:1.4}
+textarea{resize:vertical;min-height:84px}
+input::placeholder,textarea::placeholder{color:#667a90;opacity:1}
+input:disabled,select:disabled,textarea:disabled{background:#f3f6f9;color:#54687d;opacity:1;cursor:not-allowed}
+.helper{font-size:12px;line-height:1.45;font-weight:400;color:var(--muted);margin:0}
+.money{position:relative}
+.money>span{position:absolute;left:14px;top:12px;color:var(--muted);font-weight:600;pointer-events:none}
+.money input{padding-left:29px;font-variant-numeric:tabular-nums}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+input[type=number]{-moz-appearance:textfield;appearance:textfield}
+.daily-option{display:flex;align-items:center;gap:8px;margin-top:8px;font-weight:600;font-size:13px;color:var(--navy);cursor:pointer}.daily-option input{width:17px;height:17px;accent-color:var(--blue)}.daily-preview{font-weight:400;color:var(--muted);font-size:12px}
+.budget-preview{grid-column:1/-1;background:#f0f5fb;border:1px solid #d6e4f1;border-radius:10px;padding:12px 16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px}.budget-preview strong{font-size:17px;color:var(--navy)}
+fieldset{margin:0;padding:0;border:0;min-width:0}
+legend{padding:0;margin-bottom:10px;font-size:13px;font-weight:700}
+.choice-row{display:flex;gap:12px;flex-wrap:wrap}
+.choice{display:flex;align-items:center;gap:9px;min-width:110px;min-height:46px;padding:10px 16px;border:1px solid #cbd7e3;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer}
+.choice:has(input:checked){border-color:var(--blue);background:#edf4ff}
+.choice input{width:17px;height:17px;margin:0;accent-color:var(--blue)}
+.deposit-details{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:20px 22px;padding-top:3px}
+.deposit-note{grid-column:1/-1;padding:12px 15px;border-left:3px solid #8baedb;background:var(--soft);border-radius:0 8px 8px 0;font-size:12px;color:var(--muted);margin:0}
+.summary{background:var(--navy);color:#fff;border-radius:16px;padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:22px;margin-top:24px}
+.summary strong{font-size:18px;display:block}
+.summary small{font-size:12px;color:#cfdfef;display:block;margin-top:4px}
+.submit{border:0;background:#fff;color:var(--navy);min-height:46px;padding:12px 20px;border-radius:10px;font-weight:800;cursor:pointer;white-space:nowrap}
+.submit:hover:not(:disabled){background:#edf4ff}
+.submit:disabled{opacity:.55;cursor:not-allowed}
+.notice{font-size:12px;color:var(--muted);text-align:center;margin:12px 12px 0;line-height:1.5}
+.message{margin-top:18px;border-radius:12px;padding:16px 18px;font-size:14px;border:1px solid #b6d0ef;background:#edf4ff;color:var(--navy);overflow-wrap:anywhere}
+.message[data-kind=success]{border-color:#b8dfce;background:#e8f6ef;color:#16543e}
+.message[data-kind=error]{border-color:#e8b9af;background:#fff3ef;color:#862c20}
+.footer{margin-top:26px;text-align:center;font-size:11px;color:var(--muted)}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,.skip:focus-visible{outline:3px solid #87b8fb;outline-offset:3px}
+input[aria-invalid=true],select[aria-invalid=true],textarea[aria-invalid=true]{border-color:var(--danger);background:#fff6f3}
+.skip{position:absolute;left:16px;top:-80px;padding:10px 14px;background:#fff;color:var(--navy);z-index:10;border-radius:8px}
+.skip:focus{top:10px}
+.noscript{margin:20px auto;max-width:1010px;padding:16px;background:#fff3ef;color:#862c20;border:1px solid #e8b9af}
+@media(max-width:760px){
+ .hero{grid-template-columns:1fr;gap:0;margin:25px 0 22px}.heroCard{display:none}h1{font-size:36px}
+ .fields{grid-template-columns:1fr;gap:18px;padding:20px}.field.full{grid-column:auto}.category-grid{grid-template-columns:1fr;gap:18px}
+ .deposit-details{grid-template-columns:1fr;grid-column:auto}.deposit-note{grid-column:auto}
+ .panelhead{padding:18px 20px}.section-tag{display:none}.summary{flex-direction:column;align-items:stretch;gap:15px}.submit{width:100%}
+}
+@media(max-width:430px){.wrap{padding:0 14px 35px}.topin{padding:12px 14px;gap:12px}.logo{width:155px}.badge{font-size:9px;padding:7px 9px;max-width:150px}h1{font-size:33px;letter-spacing:-1px}.lead{font-size:15px}.panelhead h2{font-size:19px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+body{font-size:16px}.logo{width:100px;max-height:110px;object-fit:contain}.field>label,.field-label,legend{font-size:14px}.section-description{font-size:14px}.fields h3.full{grid-column:1/-1;margin:0;font-size:18px}.kicker,.eyebrow{font-size:12px}input[type=file]{max-width:100%;padding:12px;border:1px solid var(--line);border-radius:10px}input::placeholder{color:#808080}
+</style>
+<link rel="stylesheet" href="branding.css">
+</head>
+<body>
+<a class="skip" href="#eventForm">Skip to form</a>
+<header class="top"><div class="topin">
+<img class="logo" src="usfoga-logo-transparent.png" alt="USFOGA" width="300" height="160">
+<div class="badge">Event Budget Request</div>
+</div></header>
+<main class="wrap">
+<section class="hero" aria-labelledby="page-title">
+<div><div class="eyebrow">USFOGA Events</div><h1 id="page-title">Submit an event budget.</h1><p class="lead">Tell us about the event, its estimated costs, and what you hope to achieve.</p></div>
+<aside class="heroCard"><b>One event per request.</b><span>Have your event details and estimated expenses ready. Enter all amounts in U.S. dollars.</span></aside>
+</section>
+<div class="preview-banner" id="previewBanner"><strong>Preview only.</strong> This form is not connected yet. You can check the fields, but nothing will be sent or saved.</div>
+<noscript><div class="noscript">JavaScript must be enabled to use this form. No information can be submitted while JavaScript is disabled.</div></noscript>
+<p class="required-note">Fields marked <span class="required">*</span> are required. Enter 0 for costs that do not apply.</p>
+<form id="eventForm" novalidate>
+<section class="panel" aria-labelledby="event-title">
+<div class="panelhead"><div><div class="kicker">STEP 1</div><h2 id="event-title">Event information</h2></div></div>
+<div class="fields">
+<div class="field"><label for="leadName">Event lead name <span class="required">*</span></label><input id="leadName" name="leadName" type="text" autocomplete="name" maxlength="120" required placeholder="First and last name"></div>
+<div class="field"><label for="leadPhone">Phone number <span class="required">*</span></label><input id="leadPhone" name="leadPhone" type="tel" autocomplete="tel" maxlength="40" required placeholder="Phone number"></div>
+<div class="field full"><label for="leadEmail">Email address <span class="required">*</span></label><input id="leadEmail" name="leadEmail" type="email" autocomplete="email" maxlength="254" required placeholder="name@company.com"></div>
+<div class="field"><label for="eventName">Event name <span class="required">*</span></label><input id="eventName" name="eventName" type="text" maxlength="200" required placeholder="e.g., RFMA 2027"></div>
+<div class="field"><label for="eventLocation">Location <span class="required">*</span></label><input id="eventLocation" name="eventLocation" type="text" maxlength="250" required placeholder="City and state"></div>
+<div class="field full"><label for="eventVenue">Venue <span class="required">*</span></label><input id="eventVenue" name="eventVenue" type="text" maxlength="200" required placeholder="Convention center, hotel, or event venue"></div>
+
+<div class="field"><label for="eventStartDate">Event start date <span class="required">*</span></label><input id="eventStartDate" name="eventStartDate" type="date" required></div>
+<div class="field"><label for="eventEndDate">Event end date <span class="required">*</span></label><input id="eventEndDate" name="eventEndDate" type="date" required><p class="helper" id="daysHelp">Event duration: select both dates.</p></div>
+<div class="field full"><label for="attendeeNames">Names of USFOGA representatives attending <span class="required">*</span></label><textarea id="attendeeNames" name="attendeeNames" maxlength="1500" rows="2" required placeholder="e.g., Name 1, Name 2, Name 3"></textarea><p class="helper">List everyone attending on behalf of USFOGA, separated by commas.</p></div>
+<div class="field"><label for="paidAttendeeCount">Number of attendees USFOGA is paying for <span class="required">*</span></label><input id="paidAttendeeCount" name="paidAttendeeCount" type="number" inputmode="numeric" min="0" max="10000" step="1" required placeholder="0" data-integer aria-describedby="attendeeHelp"><p class="helper" id="attendeeHelp">Include only people whose registration and/or travel expenses USFOGA will cover.</p></div>
+</div></section>
+<section class="panel" aria-labelledby="revenue-title"><div class="panelhead"><div><div class="kicker">STEP 2</div><h2 id="revenue-title">Projected revenue</h2><p class="section-description">Estimate the income USFOGA expects to receive. Enter 0 where a revenue source does not apply.</p></div><span class="section-tag">All amounts in USD</span></div><div class="fields">
+<h3 class="full">Sponsorships</h3><div class="field"><label for="sponsorCount">Number of sponsors <span class="required">*</span></label><input id="sponsorCount" name="sponsorCount" type="number" min="0" max="1000000" step="1" inputmode="numeric" required placeholder="0" data-integer></div><div class="field"><label for="averageSponsorshipAmount">Average sponsorship amount <span class="required">*</span></label><div class="money"><span aria-hidden="true">$</span><input id="averageSponsorshipAmount" name="averageSponsorshipAmount" type="number" inputmode="decimal" min="0" max="99999999.99" step="0.01" required placeholder="0.00" data-money></div></div>
+<div class="budget-preview" aria-live="polite"><span>Projected sponsorship revenue</span><strong id="sponsorshipRevenueTotal">$0.00</strong></div>
+<h3 class="full">Registration Fees</h3><div class="field"><label for="registrationAttendeeCount">Number of attendees <span class="required">*</span></label><input id="registrationAttendeeCount" name="registrationAttendeeCount" type="number" min="0" max="1000000" step="1" inputmode="numeric" required placeholder="0" data-integer></div><div class="field"><label for="estimatedRegistrationFee">Estimated registration fee per attendee <span class="required">*</span></label><div class="money"><span aria-hidden="true">$</span><input id="estimatedRegistrationFee" name="estimatedRegistrationFee" type="number" inputmode="decimal" min="0" max="99999999.99" step="0.01" required placeholder="0.00" data-money></div></div>
+<div class="budget-preview" aria-live="polite"><span>Projected registration revenue</span><strong id="registrationRevenueTotal">$0.00</strong></div>
+<div class="budget-preview" aria-live="polite"><span>Total projected revenue</span><strong id="projectedRevenueTotal">$0.00</strong></div>
+</div></section>
+<section class="panel" aria-labelledby="expense-title">
+<div class="panelhead"><div><div class="kicker">STEP 3</div><h2 id="expense-title">Event expenses</h2><p class="section-description">Enter costs USFOGA will pay, separately from registration income above. For eligible items, check “Per day” if the amount repeats every event day.</p></div><span class="section-tag">All amounts in USD</span></div>
+<div class="fields">
+<div class="field"><label for="registrationBasis">Registration fees paid by USFOGA: basis <span class="required">*</span></label><select id="registrationBasis" name="registrationBasis" required><option value="">Select one</option><option value="Per person">Per person</option><option value="Per company">Per company</option></select></div>
+<div class="field"><label for="registrationFee"><span id="registrationLabel">Registration fee</span> <span class="required">*</span></label><div class="money"><span aria-hidden="true">$</span><input id="registrationFee" name="registrationFee" type="number" inputmode="decimal" min="0" max="99999999.99" step="0.01" placeholder="0.00" data-money aria-describedby="registrationHelp"></div><p class="helper" id="registrationHelp">Choose whether this is a per-person or company fee.</p></div>
+<div class="field"><label for="boothAndSupplies">Booth cost and supplies <span class="required">*</span></label><div class="money"><span aria-hidden="true">$</span><input id="boothAndSupplies" name="boothAndSupplies" type="number" inputmode="decimal" min="0" max="99999999.99" step="0.01" placeholder="0.00" data-money></div></div>
+<div class="field"><label for="avFee">A/V fee (if any) <span class="required">*</span></label><div class="money"><span aria-hidden="true">$</span><input id="avFee" name="avFee" type="number" inputmode="decimal" min="0" max="99999999.99" step="0.01" placeholder="0.00" data-money></div></div>
+<div class="field"><label for="marketingMaterials">Marketing materials cost <span class="required">*</span></label><div class="money"><span aria-hidden="true">$</span><input id="marketingMaterials" name="marketingMaterials" type="number" inputmode="decimal" min="0" max="99999999.99" step="0.01" placeholder="0.00" data-money></div></div>
+<div class="field"><label for="shipping">Shipping (materials &amp; equipment) <span class="required">*</span></label><div class="money"><span aria-hidden="true">$</span><input id="shipping" name="shipping" type="number" inputmode="decimal" min="0" max="99999999.99" step="0.01" placeholder="0.00" data-money></div></div>
+<div class="field"><label for="food">Food &amp; Beverage Cost <span class="required">*</span></label><div class="money"><span aria-hidden="true">$</span><input id="food" name="food" type="number" inputmode="decimal" min="0" max="99999999.99" step="0.01" placeholder="0.00" data-money></div><label class="daily-option"><input type="checkbox" id="foodDaily" aria-label="Multiply food expense by event days"> Per day <span class="daily-preview" id="foodPreview"></span></label></div>
+<div class="field"><label for="venueCost">Venue cost <span class="required">*</span></label><div class="money"><span aria-hidden="true">$</span><input id="venueCost" name="venueCost" type="number" inputmode="decimal" min="0" max="99999999.99" step="0.01" required placeholder="0.00" data-money></div></div>
+<div class="field"><label for="otherCost">Other cost <span class="required">*</span></label><div class="money"><span aria-hidden="true">$</span><input id="otherCost" name="otherCost" type="number" inputmode="decimal" min="0" max="99999999.99" step="0.01" placeholder="0.00" data-money></div><label class="daily-option"><input type="checkbox" id="otherCostDaily" aria-label="Multiply other expense by event days"> Per day <span class="daily-preview" id="otherCostPreview"></span></label></div>
+<div class="field full"><label for="otherDescription">Other expense description</label><textarea id="otherDescription" name="otherDescription" maxlength="500" rows="2" placeholder="Describe the other expense, if applicable"></textarea></div>
+</div></section>
+<section class="panel" aria-labelledby="travel-title">
+<div class="panelhead"><div><div class="kicker">STEP 4</div><h2 id="travel-title">Travel</h2><p class="section-description">Enter estimated travel costs per person covered by USFOGA, not totals for all attendees. Amounts are multiplied by the number USFOGA is paying for. Check “Per day” when applicable; hotel uses the number of hotel nights.</p></div><span class="section-tag">All amounts in USD</span></div>
+<div class="fields">
+<div class="field"><label for="flight">Flight per person <span class="required">*</span></label><div class="money"><span aria-hidden="true">$</span><input id="flight" name="flight" type="number" inputmode="decimal" min="0" max="99999999.99" step="0.01" placeholder="0.00" data-money></div></div>
+<div class="field"><label for="hotel">Hotel per person <span class="required">*</span></label><div class="money"><span aria-hidden="true">$</span><input id="hotel" name="hotel" type="number" inputmode="decimal" min="0" max="99999999.99" step="0.01" placeholder="0.00" data-money></div><label class="daily-option"><input type="checkbox" id="hotelDaily" aria-label="Multiply hotel expense by hotel nights"> Per night <span class="daily-preview" id="hotelPreview"></span></label></div>
+<div class="field"><label for="transportation">Transportation per person <span class="required">*</span></label><div class="money"><span aria-hidden="true">$</span><input id="transportation" name="transportation" type="number" inputmode="decimal" min="0" max="99999999.99" step="0.01" placeholder="0.00" data-money></div><label class="daily-option"><input type="checkbox" id="transportationDaily" aria-label="Multiply transportation expense by event days"> Per day <span class="daily-preview" id="transportationPreview"></span></label></div>
+<div class="field"><label for="travelMiscellaneous">Miscellaneous travel per person <span class="required">*</span></label><div class="money"><span aria-hidden="true">$</span><input id="travelMiscellaneous" name="travelMiscellaneous" type="number" inputmode="decimal" min="0" max="99999999.99" step="0.01" placeholder="0.00" data-money></div><label class="daily-option"><input type="checkbox" id="travelMiscellaneousDaily" aria-label="Multiply travelMiscellaneous expense by event days"> Per day <span class="daily-preview" id="travelMiscellaneousPreview"></span></label></div>
+<div class="field"><label for="hotelNights">Number of hotel nights <span class="required">*</span></label><input id="hotelNights" name="hotelNights" type="number" inputmode="numeric" min="0" max="366" step="1" required placeholder="0" data-integer><p class="helper">Used only when hotel is marked Per night. Enter 0 if no overnight stay.</p></div>
+</div></section>
+<section class="panel" aria-labelledby="deposit-title">
+<div class="panelhead"><div><div class="kicker">STEP 5</div><h2 id="deposit-title">Deposit</h2></div></div>
+<div class="fields">
+<fieldset class="field full"><legend>Is a deposit required? <span class="required">*</span></legend><div class="choice-row"><label class="choice" for="depositYes"><input id="depositYes" name="depositRequired" type="radio" value="Yes" required>Yes</label><label class="choice" for="depositNo"><input id="depositNo" name="depositRequired" type="radio" value="No" required>No</label></div></fieldset>
+<div class="deposit-details" id="depositDetails" hidden>
+<div class="field"><label for="depositDueDate">When is the deposit due? <span class="required">*</span></label><input id="depositDueDate" name="depositDueDate" type="date" min="2000-01-01" max="9999-12-31" disabled></div>
+<div class="field"><label for="depositAmount">Deposit amount <span class="required">*</span></label><div class="money"><span aria-hidden="true">$</span><input id="depositAmount" name="depositAmount" type="number" inputmode="decimal" min="0.01" max="99999999.99" step="0.01" placeholder="0.00" data-money disabled aria-describedby="depositHelp"></div></div>
+<div class="field"><label for="depositPayee">Payee <span class="required">*</span></label><input id="depositPayee" name="depositPayee" type="text" maxlength="250" disabled></div>
+<div class="field"><label for="depositPaymentMethod">Payment Method <span class="required">*</span></label><input id="depositPaymentMethod" name="depositPaymentMethod" type="text" maxlength="250" placeholder="Example: Shannon Ramp *1234" disabled><p class="helper">Use the cardholder name and last four digits only.</p></div>
+<p class="deposit-note" id="depositHelp">Include the deposit in the relevant expense above. The deposit will be shown separately in the budget report, not added to the budget a second time.</p>
+</div>
+</div></section>
+<section class="panel" aria-labelledby="metrics-title">
+<div class="panelhead"><div><div class="kicker">STEP 6</div><h2 id="metrics-title">Success metrics</h2><p class="section-description">Share the goals for the event. Rough targets are fine</p></div></div>
+<div class="fields">
+<div class="field full"><label for="eventPurpose">What is the purpose of attending the event? <span class="required">*</span></label><textarea id="eventPurpose" name="eventPurpose" maxlength="2000" rows="2" required placeholder="Why should USFOGA attend this event?"></textarea></div>
+<div class="field full"><label for="eventObjectives">What are you trying to achieve? <span class="required">*</span></label><textarea id="eventObjectives" name="eventObjectives" maxlength="2000" rows="2" required placeholder="Describe the outcomes you are aiming for."></textarea></div>
+<div class="field full"><label for="targetAudience">Who are you targeting? <span class="required">*</span></label><textarea id="targetAudience" name="targetAudience" maxlength="2000" rows="2" required placeholder="Describe the people or organizations you hope to reach."></textarea></div>
+<div class="field"><label for="targetConversations">How many conversations are you aiming to have? <span class="required">*</span></label><input id="targetConversations" name="targetConversations" type="number" inputmode="numeric" min="0" max="1000000" step="1" required placeholder="0" data-integer></div>
+<div class="field"><label for="targetLeads">How many leads are you aiming to get? <span class="required">*</span></label><input id="targetLeads" name="targetLeads" type="number" inputmode="numeric" min="0" max="1000000" step="1" required placeholder="0" data-integer></div>
+<div class="field"><label for="targetMunicipalityMemberships">Number of new Municipality memberships <span class="required">*</span></label><input id="targetMunicipalityMemberships" name="targetMunicipalityMemberships" type="number" min="0" max="1000000" step="1" inputmode="numeric" required placeholder="0" data-integer></div><div class="field"><label for="targetCommercialMemberships">Number of new Commercial restaurant, kitchen and facility memberships <span class="required">*</span></label><input id="targetCommercialMemberships" name="targetCommercialMemberships" type="number" min="0" max="1000000" step="1" inputmode="numeric" required placeholder="0" data-integer></div><div class="field"><label for="targetServiceProviderMemberships">Number of new Service provider memberships <span class="required">*</span></label><input id="targetServiceProviderMemberships" name="targetServiceProviderMemberships" type="number" min="0" max="1000000" step="1" inputmode="numeric" required placeholder="0" data-integer></div><div class="field"><label for="targetManufacturerVendorMemberships">Number of new Manufacturer/Vendor memberships <span class="required">*</span></label><input id="targetManufacturerVendorMemberships" name="targetManufacturerVendorMemberships" type="number" min="0" max="1000000" step="1" inputmode="numeric" required placeholder="0" data-integer></div></div></section>
+<section class="panel" aria-labelledby="documents-title"><div class="panelhead"><div><h2 id="documents-title">Supporting documents</h2><p class="section-description">Optional contracts, payment instructions, and other documents.</p></div></div><div class="fields"><div class="field full"><label for="documents">Attach documents</label><input type="file" id="documents" multiple accept=".pdf,.docx,.xlsx,.csv,.txt,.png,.jpg,.jpeg" disabled aria-describedby="documentHelp"><p class="helper" id="documentHelp">Document uploads will be available when the submission service is connected.</p><ul id="documentList" aria-live="polite"></ul></div></div></section>
+<div class="budget-preview" aria-live="polite"><span>Estimated total event budget</span><strong id="liveBudgetTotal">$0.00</strong></div>
+<div class="summary"><div><strong>Ready to submit?</strong><small>Check the event details, estimates, and goals before sending.</small></div><button class="submit" id="submitButton" type="submit" disabled>Check form (preview)</button></div>
+<p class="notice" id="submitNotice">Preview only. Checking this form will not submit a budget or send an email.</p>
+<div class="message" id="formMessage" role="status" aria-live="polite" tabindex="-1" hidden></div>
+</form>
+<footer class="footer">USFOGA &bull; Event budget request</footer>
+</main>
+<script src="config.js"></script>
+<script>
+'use strict';
+/* USFOGA event budget. Use the separate USFOGA flow configured in config.js. */
+const CONFIG = window.USFOGA_CONFIG || {};
+const POWER_AUTOMATE_URL = CONFIG.endpoint || '';
+const LIVE_SUBMISSIONS = CONFIG.liveSubmissions === true;
+const FORM_VERSION = 'usfoga-event-budget-v1';
+const form = document.getElementById('eventForm');
+const button = document.getElementById('submitButton');
+const message = document.getElementById('formMessage');
+const byId = id => document.getElementById(id);
+const moneyInputs = [...form.querySelectorAll('[data-money]')];
+const countInputs = [...form.querySelectorAll('[data-integer]')];
+const eventCostFields = ['boothAndSupplies','avFee','marketingMaterials','shipping','food','otherCost','venueCost'];
+const travelCostFields = ['flight','hotel','transportation','travelMiscellaneous'];
+let submitting = false;
+let submitted = false;
+let pendingPayload = null;
+let pendingFingerprint = '';
+
+function validEndpoint(value) {
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:' && !url.username && !url.password && !url.hash;
+  } catch (_) { return false; }
+}
+const isLive = LIVE_SUBMISSIONS && validEndpoint(POWER_AUTOMATE_URL);
+const defaultButtonText = isLive ? 'Submit Event Budget' : 'Check form (preview)';
+button.textContent = defaultButtonText;
+button.disabled = false;
+byId('previewBanner').hidden = isLive;
+byId('submitNotice').textContent = isLive
+  ? 'Submit one budget per event. Submission is a request for review, not spending approval.'
+  : 'Preview only. Checking this form will not submit a budget or send an email.';
+
+// Work in whole cents for addition and multiplication.
+function centsOf(input) {
+  const raw = input.value.trim();
+  if (!raw) return 0;
+  if (input.validity.badInput || !/^(?:\d+(?:\.\d{0,2})?|\.\d{1,2})$/.test(raw)) return null;
+  const parts = raw.split('.');
+  const cents = Number(parts[0] || '0') * 100 + Number((parts[1] || '').padEnd(2,'0'));
+  return Number.isSafeInteger(cents) && cents >= 0 ? cents : null;
+}
+function validateMoney(input) {
+  input.setCustomValidity('');
+  if (!input.disabled && input.value !== '' && centsOf(input) === null) {
+    input.setCustomValidity('Enter a nonnegative dollar amount with no more than two decimal places.');
+  }
+}
+function validateCount(input) {
+  input.setCustomValidity('');
+  if (input.value !== '' && (!/^\d+$/.test(input.value) || !Number.isSafeInteger(Number(input.value)))) {
+    input.setCustomValidity('Enter a whole number.');
+  }
+}
+function updateRegistration() {
+  const basis = byId('registrationBasis').value;
+  byId('registrationLabel').textContent = basis === 'Per person' ? 'Registration fee per person'
+    : basis === 'Per company' ? 'Registration fee per company' : 'Registration fee';
+  byId('registrationHelp').textContent = basis === 'Per person'
+    ? 'This rate will be multiplied by the number of attendees USFOGA is paying for.'
+    : basis === 'Per company' ? 'Enter one total registration fee for the company.'
+    : 'Choose whether this is a per-person or company fee.';
+}
+function updateDeposit() {
+  const yes = byId('depositYes').checked;
+  byId('depositDetails').hidden = !yes;
+  for (const id of ['depositDueDate','depositAmount','depositPayee','depositPaymentMethod']) {
+    const input = byId(id);
+    input.disabled = !yes;
+    input.required = yes;
+    input.setCustomValidity('');
+    input.removeAttribute('aria-invalid');
+  }
+}
+function hideMessage() {
+  message.hidden = true;
+}
+function showMessage(text, kind) {
+  message.textContent = text;
+  message.dataset.kind = kind;
+  message.hidden = false;
+  message.focus({preventScroll:true});
+  message.scrollIntoView({behavior:'auto',block:'nearest'});
+}
+
+byId('registrationBasis').addEventListener('change',()=>{updateRegistration();updateBudgetPreview();});
+for(const id of ['eventStartDate','eventEndDate'])byId(id).addEventListener('change',updateBudgetPreview);
+for (const input of form.querySelectorAll('[name="depositRequired"]')) input.addEventListener('change',updateDeposit);
+form.addEventListener('invalid', event => {
+  event.target.setAttribute('aria-invalid','true');
+},true);
+form.addEventListener('input', event => {
+  const input = event.target;
+  if (input.matches('[data-money]')) validateMoney(input);
+  if (input.matches('[data-integer]')) validateCount(input);
+  input.removeAttribute('aria-invalid');
+  if (!submitted && !submitting) hideMessage();
+  updateBudgetPreview();
+});
+form.addEventListener('change', () => { if (!submitted && !submitting) hideMessage(); updateBudgetPreview(); });
+
+function eventDays() {
+  const a=byId('eventStartDate').value, b=byId('eventEndDate').value;
+  if (!a || !b) return null;
+  const start=Date.parse(a+'T00:00:00Z'), end=Date.parse(b+'T00:00:00Z');
+  if (!Number.isFinite(start) || !Number.isFinite(end) || end<start) return null;
+  const days=Math.round((end-start)/86400000)+1;
+  return days > 0 && days <= 366 ? days : null;
+}
+function validateDates() {
+  const start=byId('eventStartDate'), end=byId('eventEndDate');
+  end.min=start.value || '';
+  end.setCustomValidity(start.value && end.value && !eventDays()
+    ? 'End date must be on or after the start date, within 366 days.' : '');
+  const days=eventDays();
+  byId('daysHelp').textContent=days===null?'Enter a valid start and end date.':`${days} event day${days===1?'':'s'} (inclusive).`;
+}
+function amountCents(id) {
+  const entered=centsOf(byId(id));
+  if (entered===null) return 0;
+  const daily=byId(id+'Daily');
+  return daily?.checked ? entered*(id==='hotel' ? (Number(byId('hotelNights').value)||0) : (eventDays()||1)) : entered;
+}
+function updateRevenuePreview(){
+  const currency=v=>(v/100).toLocaleString('en-US',{style:'currency',currency:'USD'});
+  const sponsorship=(Number(byId('sponsorCount').value)||0)*(centsOf(byId('averageSponsorshipAmount'))||0);
+  const registration=(Number(byId('registrationAttendeeCount').value)||0)*(centsOf(byId('estimatedRegistrationFee'))||0);
+  byId('sponsorshipRevenueTotal').textContent=currency(sponsorship);
+  byId('registrationRevenueTotal').textContent=currency(registration);
+  byId('projectedRevenueTotal').textContent=currency(sponsorship+registration);
+}
+function updateBudgetPreview(){
+  updateRevenuePreview();
+  validateDates();
+  const days=eventDays();
+  const registration=(centsOf(byId('registrationFee'))||0)*(byId('registrationBasis').value==='Per person'?(Number(byId('paidAttendeeCount').value)||0):1);
+  const covered=Number(byId('paidAttendeeCount').value)||0;
+  const total=eventCostFields.reduce((sum,id)=>sum+amountCents(id),registration)+travelCostFields.reduce((sum,id)=>sum+amountCents(id)*covered,0);
+  byId('liveBudgetTotal').textContent=(total/100).toLocaleString('en-US',{style:'currency',currency:'USD'});
+  for(const id of ['food','hotel','transportation','travelMiscellaneous','otherCost']){
+    const el=byId(id+'Preview');
+    if(el) el.textContent=byId(id+'Daily').checked ? (id==='hotel' ? `(× ${byId('hotelNights').value||'?'} nights × ${byId('paidAttendeeCount').value||'?'} people)` : `(× ${days??'?'} day${days===1?'':'s'}${travelCostFields.includes(id)?' × '+(byId('paidAttendeeCount').value||'?')+' people':''})`) : '';
+  }
+}
+function collectDetails() {
+  const details = {formVersion:FORM_VERSION,currency:'USD'};
+  for (const id of ['leadName','leadPhone','leadEmail','eventName','eventLocation','eventVenue',
+    'eventStartDate','eventEndDate','attendeeNames','otherDescription','eventPurpose','eventObjectives','targetAudience']) details[id]=byId(id).value.trim();
+  details.eventCategory='';
+  details.nationalSalesScope='';
+  details.eventDate=details.eventStartDate; // Legacy start-date column; update the flow for the new fields.
+  details.eventDays=eventDays();
+  for (const id of ['paidAttendeeCount','hotelNights','targetConversations','targetLeads','sponsorCount','registrationAttendeeCount','targetMunicipalityMemberships','targetCommercialMemberships','targetServiceProviderMemberships','targetManufacturerVendorMemberships']) details[id]=Number(byId(id).value);
+  details.attendeeCount=details.paidAttendeeCount; // Legacy column stores paid attendees for compatibility.
+  details.registrationBasis=byId('registrationBasis').value;
+  details.registrationFee=centsOf(byId('registrationFee'))/100;
+  details.registrationQuantity=details.registrationBasis==='Per person'?details.attendeeCount:1;
+  const registrationCents=centsOf(byId('registrationFee'))*details.registrationQuantity;
+  details.registrationTotal=registrationCents/100;
+  let eventCents=registrationCents,travelCents=0;
+  for(const id of [...eventCostFields,...travelCostFields]){
+    const daily=byId(id+'Daily');
+    if(daily){
+      details[id+'Entered']=centsOf(byId(id))/100;
+      details[id+'IsDaily']=daily.checked;
+    }
+    // Existing cost keys represent the total cost over the entire event.
+    const rawCents=amountCents(id);
+    details[id]=eventCostFields.includes(id)?rawCents/100:rawCents*details.paidAttendeeCount/100;
+    if(eventCostFields.includes(id))eventCents+=rawCents;else travelCents+=rawCents*details.paidAttendeeCount;
+  }
+  details.flightEntered=centsOf(byId('flight'))/100;
+  details.eventExpenseSubtotal=eventCents/100;
+  details.travelSubtotal=travelCents/100;
+  details.totalBudget=(eventCents+travelCents)/100;
+  details.depositRequired=byId('depositYes').checked?'Yes':'No';
+  details.depositDueDate=details.depositRequired==='Yes'?byId('depositDueDate').value:'';
+  details.depositAmount=details.depositRequired==='Yes'?centsOf(byId('depositAmount'))/100:0;
+  details.averageSponsorshipAmount=centsOf(byId('averageSponsorshipAmount'))/100;
+  details.estimatedRegistrationFee=centsOf(byId('estimatedRegistrationFee'))/100;
+  details.sponsorshipRevenue=Math.round(details.sponsorCount*centsOf(byId('averageSponsorshipAmount')))/100;
+  details.registrationRevenue=Math.round(details.registrationAttendeeCount*centsOf(byId('estimatedRegistrationFee')))/100;
+  details.projectedRevenueTotal=Math.round((details.sponsorshipRevenue+details.registrationRevenue)*100)/100;
+  details.depositPayee=details.depositRequired==='Yes'?byId('depositPayee').value.trim():'';
+  details.depositPaymentMethod=details.depositRequired==='Yes'?byId('depositPaymentMethod').value.trim():'';
+  details.attachmentNames=''; details.attachmentLinks='';
+  return details;
+}
+
+function makeReference() {
+  if (globalThis.crypto && typeof globalThis.crypto.randomUUID === 'function') {
+    return 'USFOGA-EVT-' + globalThis.crypto.randomUUID();
+  }
+  return 'USFOGA-EVT-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,12);
+}
+form.addEventListener('submit', async event => {
+  event.preventDefault();
+  if (submitting || submitted) return;
+  for (const input of form.querySelectorAll('input[type=text],input[type=tel],input[type=email],textarea')) {
+    input.value = input.value.trim();
+  }
+  moneyInputs.forEach(validateMoney);
+  countInputs.forEach(validateCount);
+  validateDates();
+  byId('otherDescription').required=Number(byId('otherCost').value)>0;
+  if (!form.reportValidity()) return;
+  const selectedFiles=[...byId('documents').files];
+  const fileError=validateFiles(selectedFiles);
+  if(fileError){showMessage(fileError,'error');return;}
+  const details = collectDetails();
+  let attachments=[];
+  try { attachments=await Promise.all(selectedFiles.map(readAttachment)); }
+  catch (_) {showMessage('A selected document could not be read. Please select it again.','error');return;}
+  details.attachmentNames=selectedFiles.map(f=>f.name).join('; ');
+  details.attachments=attachments;
+  if (!isLive) {
+    showMessage('Form checked. The required fields are complete. This is a preview: nothing has been submitted, saved to Excel, or emailed.','preview');
+    return;
+  }
+  const fingerprint = JSON.stringify(details);
+  if (!pendingPayload || fingerprint !== pendingFingerprint) {
+    pendingPayload = {submissionId:makeReference(),submittedDate:new Date().toISOString(),...details};
+    pendingFingerprint = fingerprint;
+  }
+  const states = new Map([...form.elements].map(el => [el,el.disabled]));
+  submitting = true;
+  hideMessage();
+  form.setAttribute('aria-busy','true');
+  for (const el of form.elements) el.disabled = true;
+  button.textContent = 'Submitting...';
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(),60000);
+  try {
+    const response = await fetch(POWER_AUTOMATE_URL, {
+      method:'POST',mode:'cors',credentials:'omit',redirect:'error',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(pendingPayload),signal:controller.signal
+    });
+    if (!response.ok) throw new Error('Request rejected.');
+    const receipt = await response.json();
+    if (!receipt || receipt.accepted !== true || receipt.submissionId !== pendingPayload.submissionId) {
+      throw new Error('Receipt not confirmed.');
+    }
+    submitted = true;
+    button.textContent = 'Budget submitted';
+    showMessage('Your event budget was received for processing. Please do not submit it again. Reference: ' + pendingPayload.submissionId,'success');
+  } catch (_) {
+    // An error may happen after the flow received the request. Do not retry automatically.
+    // Keep this reference for unchanged retries in this open page; deduplication is server-side.
+    for (const [el,disabled] of states) el.disabled = disabled;
+    button.textContent = defaultButtonText;
+    showMessage('We could not confirm receipt. Your entries are still here. Contact USFOGA before trying again so the budget is not submitted twice. Reference: ' + pendingPayload.submissionId,'error');
+  } finally {
+    clearTimeout(timeout);
+    submitting = false;
+    form.removeAttribute('aria-busy');
+  }
+});
+const documentsInput=byId('documents');
+documentsInput.disabled=CONFIG.attachmentsEnabled!==true;
+if(CONFIG.attachmentsEnabled===true)byId('documentHelp').textContent='Up to 5 files, 5 MB per file, 10 MB total. PDF, Word, Excel, CSV, text, PNG, or JPEG.';
+function validateFiles(files){
+ if(files.length>5)return 'Choose no more than 5 documents.';
+ if(files.reduce((n,f)=>n+f.size,0)>10*1024*1024)return 'Documents must total 10 MB or less.';
+ for(const f of files){if(f.size>5*1024*1024)return 'Each document must be 5 MB or smaller.';if(!/\.(pdf|docx|xlsx|csv|txt|png|jpe?g)$/i.test(f.name))return 'Choose a PDF, Word, Excel, CSV, text, PNG, or JPEG file.';}
+ return '';
+}
+function readAttachment(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve({name:file.name,contentType:file.type||'application/octet-stream',size:file.size,contentBase64:String(reader.result).split(',')[1]});reader.onerror=reject;reader.readAsDataURL(file);});}
+documentsInput.addEventListener('change',()=>{const files=[...documentsInput.files];const error=validateFiles(files);byId('documentList').replaceChildren();for(const f of files){const li=document.createElement('li');li.textContent=f.name;byId('documentList').append(li);}if(error)showMessage(error,'error');});
+updateRegistration();
+updateDeposit();
+updateBudgetPreview();
+</script>
+</body>
+</html>
+
+
