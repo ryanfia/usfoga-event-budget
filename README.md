@@ -6,7 +6,7 @@ USFOGA event budget form with projected revenue, event expenses, travel, deposit
 
 https://ryanfia.github.io/usfoga-event-budget/
 
-GitHub Pages publishes the root of the main branch over HTTPS. This repository and the website are public. Live submission availability is controlled by config.js. Document uploads remain disabled until their SharePoint storage steps are implemented.
+GitHub Pages publishes the root of the main branch over HTTPS. This repository and the website are public. Live submission availability is controlled by config.js. Supporting documents are optional: up to 5 files, 5 MB each, 10 MB total. Supported types: PDF, DOCX, XLSX, CSV, TXT, PNG, JPG and JPEG. Files are saved in a private SharePoint folder for each submission, and existing SharePoint access is required to open them. Filenames and private links are included in the master workbook, report and completion email. Files are never stored in this repository.
 
 ## Files
 
